@@ -1,7 +1,7 @@
 ManifestFileVersion: 0
-CRC: 4089455461
+CRC: 4030203778
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: assets
+      Name: basictemplate_assets
       Dependencies: {}

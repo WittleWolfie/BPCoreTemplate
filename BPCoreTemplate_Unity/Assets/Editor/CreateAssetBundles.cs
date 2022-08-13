@@ -7,13 +7,12 @@ public class CreateAssetBundles
   [MenuItem("Assets/Build AssetBundles")]
   static void BuildAllAssetBundles()
   {
-    string assetBundleDirectory = "Assets/StreamingAssets";
     if (!Directory.Exists(Application.streamingAssetsPath))
     {
-      Directory.CreateDirectory(assetBundleDirectory);
+      Directory.CreateDirectory(Application.streamingAssetsPath);
     }
     BuildPipeline.BuildAssetBundles(
-        assetBundleDirectory,
+        Application.streamingAssetsPath,
         BuildAssetBundleOptions.None,
         EditorUserBuildSettings.activeBuildTarget);
   }

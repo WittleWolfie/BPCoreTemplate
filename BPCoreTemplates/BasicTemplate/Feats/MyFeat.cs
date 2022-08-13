@@ -14,7 +14,7 @@ namespace BasicTemplate.Feats
 
     private static readonly string DisplayName = "MyFeat.Name";
     private static readonly string Description = "MyFeat.Description";
-    private static readonly string Icon = "assets/icons/quillen.png";
+    private static readonly string Icon = "assets/icons/quillen.jpg";
 
     public static void Configure()
     {
