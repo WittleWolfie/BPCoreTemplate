@@ -1,5 +1,4 @@
-﻿
-using BlueprintCore.Blueprints.CustomConfigurators.Classes;
+﻿using BlueprintCore.Blueprints.CustomConfigurators.Classes;
 using Kingmaker.Blueprints.Classes;
 
 namespace BasicTemplate.Feats
