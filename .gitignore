@@ -397,3 +397,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 BPCoreTemplates/lib/Assembly-CSharp.dll
+
+# Release files
+BasicTemplate/**
+*.zip
