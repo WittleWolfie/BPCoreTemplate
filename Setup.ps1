@@ -27,7 +27,7 @@ $projectFiles = Join-Path -Path $currentDir -ChildPath "BasicTemplate\*"
 Copy-Item -Path $projectFiles -Destination $modProject -Recurse -Force
 
 $unityProject = Get-Folder -Desc "Select your Unity project directory" -Dir $currentDir
-$unityFiles = Join-Path -Path $currentDir -ChildPath "Unity\*"
+$unityFiles = Join-Path -Path $currentDir -ChildPath "Assets"
 Copy-Item -Path $unityFiles -Destination $unityProject -Recurse -Force
 
 $modName = Read-Host -Prompt "What is the name of your mod?"
