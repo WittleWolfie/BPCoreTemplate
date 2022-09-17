@@ -1,4 +1,5 @@
 ﻿using BasicTemplate.Feats;
+using BlueprintCore.Blueprints.Configurators.Root;
 using BlueprintCore.Utils;
 using HarmonyLib;
 using Kingmaker.Blueprints.JsonSystem;
@@ -41,13 +42,13 @@ namespace BasicTemplate
 
       [HarmonyPriority(Priority.First)]
       [HarmonyPatch(nameof(BlueprintsCache.Init)), HarmonyPostfix]
-      static void Postfix()
+      static void Init()
       {
         try
         {
           if (Initialized)
           {
-            Logger.Info("Already initialized blueprints cache.");
+            Logger.Info("Already configured blueprints.");
             return;
           }
           Initialized = true;
@@ -58,7 +59,33 @@ namespace BasicTemplate
         }
         catch (Exception e)
         {
-          Logger.Error("Failed to initialize.", e);
+          Logger.Error("Failed to configure blueprints.", e);
+        }
+      }
+    }
+
+    [HarmonyPatch(typeof(StartGameLoader))]
+    static class StartGameLoader_Patch
+    {
+      private static bool Initialized = false;
+
+      [HarmonyPatch(nameof(StartGameLoader.LoadPackTOC)), HarmonyPostfix]
+      static void LoadPackTOC()
+      {
+        try
+        {
+          if (Initialized)
+          {
+            Logger.Info("Already configured delayed blueprints.");
+            return;
+          }
+          Initialized = true;
+
+          RootConfigurator.ConfigureDelayedBlueprints();
+        }
+        catch (Exception e)
+        {
+          Logger.Error("Failed to configure delayed blueprints.", e);
         }
       }
     }

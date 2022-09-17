@@ -21,7 +21,7 @@ namespace BasicTemplate.Feats
         .SetDisplayName(DisplayName)
         .SetDescription(Description)
         .SetIcon(Icon)
-        .Configure();
+        .Configure(delayed: true);
     }
   }
 }
