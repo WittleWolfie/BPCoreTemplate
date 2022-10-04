@@ -138,7 +138,7 @@
 
     <Copy SourceFiles="@(Assembly)" DestinationFolder="$(OutputPath)\$(AssemblyName)" />
     <Copy SourceFiles="@(ModConfig)" DestinationFolder="$(OutputPath)\$(AssemblyName)" />
-    <Copy SourceFiles="@(Strings)" DestinationFolder="$(WrathPath)\$(AssemblyName)" />
+    <Copy SourceFiles="@(Strings)" DestinationFolder="$(OutputPath)\$(AssemblyName)" />
     <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutputPath)\$(AssemblyName)" />
     <ZipDirectory
       SourceDirectory="$(OutputPath)\$(AssemblyName)"
