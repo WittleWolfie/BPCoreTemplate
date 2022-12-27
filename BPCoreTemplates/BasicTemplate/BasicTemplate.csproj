@@ -94,6 +94,7 @@
       <RenamedAssembly Include="$(SolutionDir)lib\Assembly-CSharp.dll" />
     </ItemGroup>
 
+    <RemoveDir Directories="$(SolutionDir)lib/" />
     <PublicizeTask InputAssemblies="@(Assemblies)" OutputDir="$(SolutionDir)lib/" />
     <!-- ILRepack requires the assembly name match the reference so remove _public -->
     <Move SourceFiles="@(PublicAssembly)" DestinationFiles="@(RenamedAssembly)" />
@@ -108,7 +109,7 @@
     </ItemGroup>
 
     <Message Text="Merging: @(InputAssemblies) into @(OutputAssembly)" Importance="High" />
-
+    
     <ILRepack OutputType="Dll" MainAssembly="@(OutputAssembly)" OutputAssembly="@(OutputAssembly)" InputAssemblies="@(InputAssemblies)" WorkingDirectory="$(OutputPath)" />
   </Target>
 
