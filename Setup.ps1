@@ -44,3 +44,6 @@ foreach($file in $unityFiles)
 {
   (Get-Content -Path $file.FullName -Raw) -replace "BasicTemplate",$modName | Set-Content -Path $file.FullName -Force
 }
+
+$shell = New-Object -ComObject "WScript.Shell"
+$button = $shell.Popup("Click OK to exit", 0, "Done", 0)
